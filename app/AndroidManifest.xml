@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xiaozhi.watch"
+    android:versionCode="1"
+    android:versionName="0.1">
+    <!-- 小智手表端客户端：把表当"麦克风 + 喇叭 + 屏幕"，音频 Opus 编码后走 WebSocket 到小智云 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- 注意：本工程无 res/ 目录，不能声明 android:icon="@mipmap/..."（aapt2 会直接失败） -->
+    <application android:label="小智" android:debuggable="true" android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity" android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <!-- 夺舍表盘上的"小布"complication 图标：launcher 用隐式 action
+                 com.heytap.wearable.breeno.intent.action.SPEECH 拉起它，小布禁用后本 activity 成唯一 resolver -->
+            <intent-filter>
+                <action android:name="com.heytap.wearable.breeno.intent.action.SPEECH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!-- 上键长按接管说明：LONG_PRESS_NAVI 是隐式广播，Android 8 起清单 receiver 收不到，
+             改由 EntryKeepAlive 运行时注册接收器接管（见该类）。 -->
+        <!-- 哑前台服务：常驻进程 + 运行时注册上键长按接收器 -->
+        <service android:name=".EntryKeepAlive" android:exported="false"/>
+        <!-- 开机自启前台服务（BOOT_COMPLETED 在隐式广播豁免名单内，清单接收器有效） -->
+        <receiver android:name=".BootReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

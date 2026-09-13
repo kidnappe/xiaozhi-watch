@@ -1,0 +1,5 @@
+{
+  "ws_url": "wss://api.tenclass.net/xiaozhi/v1/",
+  "token": "test-token",
+  "ota_url": "https://api.tenclass.net/xiaozhi/ota/"
+}

@@ -1,0 +1,66 @@
+# 许可声明（本仓库采用"分层许可"，请先读完再使用/再分发）
+
+## 1. 本项目自研代码 —— MIT License
+
+除第 2 条列出的文件外，本仓库全部代码与文档采用 MIT License：
+
+```
+MIT License
+
+Copyright (c) 2026 xiaozhi-watch authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+> 提交时请把版权行替换为你的名字/组织。
+
+## 2. 表情球衍生代码 —— 继承上游"非商用学习许可"
+
+以下文件移植/生成自 **NX_emotion_ball**（作者 sam70361，上游许可为
+《Learning & Exchange License (Non-Commercial) / 仅供学习交流许可（禁止商业用途）》）：
+
+- `app/src/com/xiaozhi/watch/EmotionBallView.java`（渲染引擎移植）
+- `app/src/com/xiaozhi/watch/Emotions.java`、`Rings.java`、`EmotionDef.java`、`Colorx.java`、`EmotionDef` 相关（由 `tools/gen_eb_java.js` 从上游 JS 数据生成）
+- `tools/gen_eb_java.js`（上游数据转换器）
+- `app/new_emotions.json` 及由其生成的表情条目（基于上游参数体系创作）
+
+这些文件**不得用于任何商业用途**；商用需向上游作者获取商业许可
+（见其仓库 `LICENSE-COMMERCIAL.md`）。再分发时必须保留本条声明。
+
+如需构建"无表情球"的干净版本，删除上述文件并在 `MainActivity` 中移除
+`EmotionBallView` 引用即可，其余功能（按住说话、按需连接、戳互动音效/震动等）不受影响。
+
+## 3. 第三方依赖（不随本仓库分发，各自遵循原许可）
+
+| 依赖 | 用途 | 许可 |
+|---|---|---|
+| Concentus (`libs/concentus-1.0.2.jar`) | 纯 Java Opus 编解码 | BSD-3-Clause |
+| Java-WebSocket (`libs/Java-WebSocket-1.5.7.jar`) | WS 客户端 | MIT（双许可可选 GPL2） |
+| slf4j-api (`libs/slf4j-api-2.0.6.jar`) | Java-WebSocket 运行时依赖 | MIT |
+| Android platform / build-tools | 工具链 | Android SDK 许可 |
+
+## 4. 与官方小智的关系（免责声明）
+
+- 本项目是**第三方个人研究项目**，与小智（xiaozhi.me）官方无任何隶属或背书关系。
+- 默认连接小智官方云服务，仅作为其 WebSocket 协议的普通客户端使用；
+  设备身份为本地自造的随机 MAC（`02:` 本地管理位），不冒充任何真实硬件。
+- 使用者请自行遵守小智官方服务条款，合理低频使用；官方服务如收紧策略，
+  责任与选择权在官方。
+- 本仓库不包含任何服务端部署、License 绕过或激活码滥用手段；
+  设备绑定自己的智能体走官方公开的"控制台输激活码"流程。

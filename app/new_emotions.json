@@ -1,0 +1,485 @@
+[
+  {
+    "id": "50",
+    "name": "心疼安抚",
+    "group": "custom",
+    "desc": "你哭→球心疼：歪头低头前倾、一眼心疼眯起、以 1.6s 节奏轻拍式上下安抚，暖玫瑰灰脸",
+    "transition": 520,
+    "pool": [
+      10,
+      1
+    ],
+    "poolMs": [
+      4200,
+      7000
+    ],
+    "blinkMs": [
+      4500,
+      8000
+    ],
+    "openness": 0.88,
+    "body": {
+      "y": 5,
+      "rotate": -7,
+      "breathe": 0.008,
+      "color": "#F3E7E2"
+    },
+    "eyes": {
+      "left": {
+        "open": 0.62,
+        "y": 6,
+        "lookY": 4
+      },
+      "right": {
+        "y": 4,
+        "lookY": 4,
+        "scaleY": 1.06
+      }
+    },
+    "anims": [
+      {
+        "target": "body",
+        "prop": "y",
+        "type": "sine",
+        "amp": 2.8,
+        "period": 1600
+      },
+      {
+        "target": "eyes",
+        "prop": "y",
+        "type": "sine",
+        "amp": 1.1,
+        "period": 1600,
+        "phase": 0.5
+      }
+    ]
+  },
+  {
+    "id": "51",
+    "name": "同仇敌忾",
+    "group": "custom",
+    "desc": "你生气→球挺你但克制：暗砖红脸（区别于 21 亮红自怒）、怒目斜眼环+双眼镜像下压、挺胸慢深呼吸、微而不躁的颤",
+    "transition": 300,
+    "pool": [
+      7,
+      16
+    ],
+    "poolMs": [
+      3600,
+      6000
+    ],
+    "blinkMs": [
+      4000,
+      7500
+    ],
+    "openness": 0.78,
+    "body": {
+      "y": -2,
+      "scale": 1.02,
+      "breathe": 0.018,
+      "color": "#B95A4E"
+    },
+    "eyes": {
+      "left": {
+        "rotate": 10,
+        "y": -1,
+        "scaleX": 1.04,
+        "scaleY": 0.92
+      },
+      "right": {
+        "rotate": -10,
+        "y": -1,
+        "scaleX": 1.04,
+        "scaleY": 0.92
+      }
+    },
+    "anims": [
+      {
+        "target": "body",
+        "prop": "x",
+        "type": "jitter",
+        "amp": 0.7,
+        "speed": 4
+      },
+      {
+        "target": "body",
+        "prop": "y",
+        "type": "sine",
+        "amp": 0.8,
+        "period": 2200
+      }
+    ]
+  },
+  {
+    "id": "52",
+    "name": "悬心担忧",
+    "group": "custom",
+    "desc": "你害怕/担心→球悬心：屏息定格（身体几乎不呼吸）、圆睁大眼上瞟看你、左眼更高（担忧挑眉）、冷灰脸+高频浅眨眼+细颤",
+    "transition": 240,
+    "pool": [
+      3,
+      21
+    ],
+    "poolMs": [
+      3000,
+      5200
+    ],
+    "blinkMs": [
+      1400,
+      2800
+    ],
+    "openness": 1.0,
+    "body": {
+      "y": -3,
+      "rotate": -4,
+      "breathe": 0.003,
+      "color": "#E9E6DF"
+    },
+    "eyes": {
+      "both": {
+        "lookY": -2,
+        "y": -1
+      },
+      "left": {
+        "scaleY": 1.12
+      },
+      "right": {
+        "scaleY": 0.98
+      }
+    },
+    "anims": [
+      {
+        "target": "body",
+        "prop": "x",
+        "type": "jitter",
+        "amp": 1.0,
+        "speed": 5
+      },
+      {
+        "target": "eyes",
+        "prop": "lookY",
+        "type": "sine",
+        "amp": 1.2,
+        "period": 2600,
+        "phase": 0.8
+      }
+    ]
+  },
+  {
+    "id": "53",
+    "name": "无语凝噎",
+    "group": "custom",
+    "desc": "你难过→球难说到说不出话：灰脸下沉、双眼半阖成重帘（open 0.35）、每 2.8s 一次喉头哽咽式颤睫、极慢左右晃，不眨眼无漂移",
+    "transition": 900,
+    "gaze": false,
+    "pool": [
+      13,
+      4
+    ],
+    "poolMs": [
+      5000,
+      8000
+    ],
+    "blinkMs": null,
+    "openness": 1.0,
+    "body": {
+      "y": 6,
+      "rotate": -3,
+      "breathe": 0.005,
+      "color": "#E7E5E1"
+    },
+    "eyes": {
+      "both": {
+        "open": 0.35,
+        "y": 6,
+        "lookY": 4
+      }
+    },
+    "anims": [
+      {
+        "target": "eyes",
+        "prop": "open",
+        "type": "blink",
+        "interval": 2800,
+        "dur": 650,
+        "depth": 0.3
+      },
+      {
+        "target": "body",
+        "prop": "rotate",
+        "type": "sine",
+        "amp": 1.8,
+        "period": 5200
+      }
+    ]
+  },
+  {
+    "id": "54",
+    "name": "凑近细听",
+    "group": "custom",
+    "desc": "没听清→球凑近：身体放大 1.06 前倾上提、歪头、右眼眯缝打量、左右轻晃找角度",
+    "transition": 260,
+    "pool": [
+      10,
+      1
+    ],
+    "poolMs": [
+      3400,
+      5600
+    ],
+    "blinkMs": [
+      2600,
+      5200
+    ],
+    "openness": 1.0,
+    "body": {
+      "y": -5,
+      "scale": 1.06,
+      "rotate": -6,
+      "breathe": 0.006
+    },
+    "eyes": {
+      "both": {
+        "lookY": -2
+      },
+      "left": {
+        "open": 1.05
+      },
+      "right": {
+        "open": 0.45,
+        "y": 1
+      }
+    },
+    "anims": [
+      {
+        "target": "body",
+        "prop": "x",
+        "type": "sine",
+        "amp": 2.5,
+        "period": 2400
+      }
+    ]
+  },
+  {
+    "id": "55",
+    "name": "卡壳冒烟",
+    "group": "custom",
+    "desc": "AI 久无响应→球卡壳：对眼+一大一小眼、眼环 0.7~1.1s 高频翻跳（poolSpeed 10）、烟灰脸抖动“散热”（引擎无烟雾粒子，以抖动+灰脸表意）",
+    "transition": 180,
+    "pool": [
+      3,
+      21
+    ],
+    "poolMs": [
+      650,
+      1100
+    ],
+    "poolSpeed": 10,
+    "blinkMs": null,
+    "openness": 1.08,
+    "body": {
+      "y": -1,
+      "breathe": 0.004,
+      "color": "#E4E1DB"
+    },
+    "eyes": {
+      "left": {
+        "lookX": 7,
+        "scaleX": 1.22,
+        "scaleY": 1.22
+      },
+      "right": {
+        "lookX": -7,
+        "scaleX": 0.72,
+        "scaleY": 0.72
+      }
+    },
+    "anims": [
+      {
+        "target": "body",
+        "prop": "rotate",
+        "type": "sine",
+        "amp": 2.6,
+        "period": 1300
+      },
+      {
+        "target": "body",
+        "prop": "x",
+        "type": "jitter",
+        "amp": 1.6,
+        "speed": 10
+      }
+    ]
+  },
+  {
+    "id": "56",
+    "name": "四处张望",
+    "group": "custom",
+    "desc": "等得无聊→球东张西望：头部 ±5° 慢摆+目光 ±12 单位来回扫视（慢版检索，休闲不急促）、扫读眼环轮换、偶有弹跳小动作",
+    "transition": 420,
+    "antics": true,
+    "pool": [
+      15,
+      9,
+      20,
+      12,
+      18
+    ],
+    "poolMs": [
+      1100,
+      2000
+    ],
+    "blinkMs": [
+      2200,
+      4600
+    ],
+    "openness": 1.0,
+    "body": {
+      "breathe": 0.012
+    },
+    "eyes": {
+      "both": {
+        "lookY": -1
+      }
+    },
+    "anims": [
+      {
+        "target": "body",
+        "prop": "rotate",
+        "type": "sine",
+        "amp": 5,
+        "period": 5200
+      },
+      {
+        "target": "eyes",
+        "prop": "lookX",
+        "type": "scan",
+        "amp": 12,
+        "period": 2800
+      }
+    ]
+  },
+  {
+    "id": "57",
+    "name": "偷瞄装没事",
+    "group": "custom",
+    "desc": "待机微叙事：glance 波形快速斜瞟一眼（羞怯/斜眼环），回正瞬间来一次“没事人”眨眼，头小幅跟转，视线略低不与你正视",
+    "transition": 400,
+    "pool": [
+      24,
+      14,
+      5
+    ],
+    "poolMs": [
+      2600,
+      4200
+    ],
+    "blinkMs": [
+      5000,
+      9000
+    ],
+    "openness": 0.95,
+    "body": {
+      "rotate": 2,
+      "breathe": 0.01
+    },
+    "eyes": {
+      "both": {
+        "lookX": 4,
+        "lookY": 2
+      }
+    },
+    "anims": [
+      {
+        "target": "eyes",
+        "prop": "lookX",
+        "type": "glance",
+        "amp": 8,
+        "period": 4600
+      },
+      {
+        "target": "body",
+        "prop": "rotate",
+        "type": "sine",
+        "amp": 3,
+        "period": 4600,
+        "phase": 0.4
+      },
+      {
+        "target": "eyes",
+        "prop": "open",
+        "type": "blink",
+        "interval": 4600,
+        "dur": 420,
+        "depth": 1.0,
+        "phaseMs": 1300
+      }
+    ]
+  },
+  {
+    "id": "58",
+    "name": "被打断懵",
+    "group": "custom",
+    "desc": "话被粗暴打断/戳球截胡：先一震（jitter decay 600ms）随即定格发懵——双眼圆睁失焦外撇、目光上飘发直、不眨眼、仅留极慢余晃；区别于 55 卡壳（斗鸡眼+大小眼+烟灰+高频翻跳）",
+    "transition": 150,
+    "pool": [
+      13,
+      3
+    ],
+    "poolMs": [
+      1000,
+      1800
+    ],
+    "blinkMs": null,
+    "body": {
+      "y": -2,
+      "scale": 0.97,
+      "rotate": -2,
+      "breathe": 0.004,
+      "color": "#EFEBE5"
+    },
+    "eyes": {
+      "left": {
+        "open": 1.1,
+        "scaleX": 1.05,
+        "scaleY": 1.08,
+        "lookX": -4,
+        "lookY": -3,
+        "y": -1
+      },
+      "right": {
+        "open": 1.1,
+        "scaleX": 1.05,
+        "scaleY": 1.08,
+        "lookX": 4,
+        "lookY": -3,
+        "y": -1
+      }
+    },
+    "anims": [
+      {
+        "target": "body",
+        "prop": "x",
+        "type": "jitter",
+        "amp": 2.2,
+        "speed": 12,
+        "decay": 600
+      },
+      {
+        "target": "body",
+        "prop": "rotate",
+        "type": "sine",
+        "amp": 1.4,
+        "period": 2600
+      },
+      {
+        "target": "eyes",
+        "prop": "lookY",
+        "type": "sine",
+        "amp": 1.2,
+        "period": 1900,
+        "phase": 0.7
+      }
+    ]
+  }
+]

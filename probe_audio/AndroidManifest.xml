@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xiaozhi.probe"
+    android:versionCode="1"
+    android:versionName="0.1">
+    <!-- P0 音频能力探针：回答"能不能录音 / 能不能出声 / 纯 Java Opus 够不够快" -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- 2026-09-12 修正：本工程无 res/ 目录，aapt2 对 @mipmap/ic_launcher 会报
+         "resource mipmap/ic_launcher not found" 直接失败，故不声明 android:icon。
+         （E:\code\watch\probe 的清单里同样挂着 @mipmap/ic_launcher 但没有 res/，那份 build.ps1 现在跑不过，属同因） -->
+    <application android:label="XZProbe" android:debuggable="true">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

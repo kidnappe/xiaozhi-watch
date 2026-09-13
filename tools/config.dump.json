@@ -1,0 +1,5 @@
+{
+  "ws_url": "ws://127.0.0.1:8000/xiaozhi/v1/",
+  "token": "test-token",
+  "ota_url": "http://127.0.0.1:8002/xiaozhi/ota/"
+}
